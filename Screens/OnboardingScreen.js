@@ -35,15 +35,15 @@ export default function OnboardingScreen() {
         pages={[
        
           {
-            backgroundColor: '#292229', 
-            image: <Image source={require('../assets/images/sup4.png')}  style={styles.imagenes}/>,
+            backgroundColor: Azul, 
+            image: <Image source={require('../assets/images/digital2.jpg')}  style={styles.imagenes}/>,
             title: 'Raising the bar',
             subtitle: 'En octubre de 2022 ¡Supérate! y USAID firman el nuevo convenio titulado “Digital Talent"',
           },
           {
-            backgroundColor: Azul, 
+            backgroundColor: Celeste, 
             image: (
-              <Image source={require('../assets/images/sup9.jpg')} style={styles.imagenes}/>
+              <Image source={require('../assets/images/sup6.jpg')} style={styles.imagenes}/>
             ),
             title: 'Walk the extra mile',
             subtitle: '"La educación es el arma más poderosa que puedes usar para cambiar el mundo"',
@@ -52,7 +52,7 @@ export default function OnboardingScreen() {
             backgroundColor: '#8DC63F', 
             image: (
               <Image
-                source={require('../assets/images/sup5.png')}
+                source={require('../assets/images/4.jpg')}
                 style={styles.imagenes}
               />
             ),
