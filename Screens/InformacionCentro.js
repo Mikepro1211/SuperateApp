@@ -1,7 +1,7 @@
 import { View, Text ,StyleSheet, Image, ScrollView} from 'react-native';
 import {Carousel} from "react-native-ui-lib";
 
-export default function informacionCentro({navigation , route}) {
+export default function InformacionCentro({navigation , route}) {
     const {centro} = route.params
     return(
         <View style={styles.container}>

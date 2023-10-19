@@ -3,9 +3,10 @@ import DrawerNavigation from "./drawernavigation";
 import OnboardingScreen from "../Screens/OnboardingScreen";
 import { useEffect } from "react";
 import { getItem } from '../utils/asyncStorage.js';
+import InformacionCentro from "../Screens/InformacionCentro";
 
 //importaciones de screens llamadas por Stack
-import Poma from "../Screens/Poma";
+
 import { useState } from "react";
 
 const Stack = createStackNavigator()
@@ -40,7 +41,8 @@ useEffect(()=> {checkOnboarded()},[] )
        <Stack.Navigator >
         <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
         <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
-            <Stack.Screen name={"Poma"} component={Poma}/>
+        <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
+
         </Stack.Navigator>
         )
 
@@ -50,7 +52,8 @@ useEffect(()=> {checkOnboarded()},[] )
             <Stack.Navigator >
                  <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
             <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
-                <Stack.Screen name={"Poma"} component={Poma}/>
+            <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
+
             </Stack.Navigator>
             ) 
 

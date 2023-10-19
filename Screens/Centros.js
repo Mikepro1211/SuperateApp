@@ -226,7 +226,7 @@ export default function Centros({navigation}){
         <FlatList data={centros}
                   keyExtractor={(item)=> item.id}
                   renderItem={({item})=>
-                      <TouchableOpacity onPress={()=>{navigation.navigate('informacionCentro',{centro: item})}} style={styles.card}>
+                      <TouchableOpacity onPress={()=>{navigation.navigate('InformacionCentro',{centro: item})}} style={styles.card}>
                           <View style={styles.ImageContainer}>
                               <Image style={styles.imagen} source={{uri:item.logo}}/>
                           </View>
