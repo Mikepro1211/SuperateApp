@@ -10,10 +10,17 @@ import Contacto from "../Screens/Contacto";
 
 //importacion de drawerNavigation
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
 import Drawerview from "./drawerview";
 import {Image, View} from "react-native";
-
+import drawerMenu from './drawerMenu';
+import NuestroEquipo from '../Screens/NuestroEquipo';
+import NuestraHistoria from '../Screens/NuestraHistoria';
+import NuestraFilosofia from '../Screens/NuestraFilosofia';
+import EfectoMultiplicador from '../Screens/EfectoMultiplicador';
+import NuestroPrograma from '../Screens/NuestroPrograma';
+  
 
 export default function DrawerNavigation(navigation) {
     return(
@@ -52,15 +59,25 @@ export default function DrawerNavigation(navigation) {
                 ),
 
             }} />
-            <Drawer.Screen name="¿Quienes Somos?" component={QuienesSomos} options={{
-                drawerIcon: ({ focused , color , size }) => (
-                    <Ionicons
-                    name={focused ? 'reader-outline': 'reader'}
-                    size={size}
-                    color={color}
-                />
-                ),
-            }}/>
+
+            <Drawer.Screen name="¿Quienes Somos?" component={QuienesSomos} 
+            
+            options={{
+               drawerIcon: ({ focused, color, size }) => (
+            <Ionicons
+              name={focused ? 'reader-outline' : 'reader'}
+              size={size}
+              color={color}
+            />
+          ),
+        }}>
+        </Drawer.Screen>
+
+            <Drawer.Screen name="Nuestra Historia" component={NuestraHistoria}></Drawer.Screen>
+            <Drawer.Screen name="Nuestra Filosofia" component={NuestraFilosofia}></Drawer.Screen>
+            <Drawer.Screen name="Efecto Multiplicador" component={EfectoMultiplicador}></Drawer.Screen>
+            <Drawer.Screen name="Nuestro Equipo" component={NuestroEquipo}></Drawer.Screen>   
+            
             <Drawer.Screen name={"¿Que hacemos?"} component={QueHacemos} options={{
                 drawerIcon: ({ focused , color , size }) => (
                     <Ionicons
@@ -70,6 +87,9 @@ export default function DrawerNavigation(navigation) {
                     />
                 ),
             }}/>
+            
+            <Drawer.Screen name="Nuestro Programa" component={NuestroPrograma}></Drawer.Screen>   
+
             <Drawer.Screen name="Centros" component={Centros} options={{
                 drawerIcon: ({ focused , color , size }) => (
                     <Ionicons

@@ -4,7 +4,7 @@ export default  function QuienesSomos(){
 
     return(
         <View>
-            <Text>Quienes Somos</Text>
+            <Text>Quienes Somos</Text>    
         </View>
     )
 }
