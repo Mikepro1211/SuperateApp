@@ -73,11 +73,6 @@ export default function DrawerNavigation(navigation) {
         }}>
         </Drawer.Screen>
 
-            <Drawer.Screen name="Nuestra Historia" component={NuestraHistoria}></Drawer.Screen>
-            <Drawer.Screen name="Nuestra Filosofia" component={NuestraFilosofia}></Drawer.Screen>
-            <Drawer.Screen name="Efecto Multiplicador" component={EfectoMultiplicador}></Drawer.Screen>
-            <Drawer.Screen name="Nuestro Equipo" component={NuestroEquipo}></Drawer.Screen>   
-            
             <Drawer.Screen name={"¿Que hacemos?"} component={QueHacemos} options={{
                 drawerIcon: ({ focused , color , size }) => (
                     <Ionicons
@@ -88,7 +83,6 @@ export default function DrawerNavigation(navigation) {
                 ),
             }}/>
             
-            <Drawer.Screen name="Nuestro Programa" component={NuestroPrograma}></Drawer.Screen>   
 
             <Drawer.Screen name="Centros" component={Centros} options={{
                 drawerIcon: ({ focused , color , size }) => (

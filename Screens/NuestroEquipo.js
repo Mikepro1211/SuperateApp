@@ -1,6 +1,5 @@
 import {FlatList, View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Data  ({navigation}){
     const junta =[{
@@ -100,8 +99,8 @@ export default function Data  ({navigation}){
 
     
       return (
-        <SafeAreaView>
-        <ScrollView>
+        <ScrollView style={styles.contenedorScroll}>
+        <View style={styles.container}>
         <Text style={styles.heading}>Junta Directiva</Text>
         <Text style={styles.paragraph}>Está compuesta por el presidente y representantes de los concesionarios del Programa ¡Supérate!.</Text>
         <FlatList
@@ -109,7 +108,6 @@ export default function Data  ({navigation}){
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
         />
-
         <Text style={styles.heading}>Equipo Institucional</Text>
         <Text style={styles.paragraph}>Está compuesto por el Director Ejecutivo, Directora Académica, Directora de Operaciones, 
         Administradora Contable y Coordinador de Proyectos y Comunicaciones.</Text>
@@ -118,8 +116,8 @@ export default function Data  ({navigation}){
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
         />
+        </View>
         </ScrollView>
-        </SafeAreaView>
     )}
 
     
@@ -132,6 +130,10 @@ export default function Data  ({navigation}){
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
       },
+      contenedorScroll: {
+        marginBottom: 36,
+        backgroundColor: 'white',
+    },
       image: {
         width: 120,
         height: 120,
@@ -162,16 +164,18 @@ export default function Data  ({navigation}){
         marginTop:20,
       },
       heading: {
+        color: "#00B6D8",
         fontSize: 30,
-        fontWeight: 'bold',
-        marginTop: 10,
-        marginLeft:10,
-        color:'darkturquoise',
+        textAlign: "center",
+        fontWeight: "bold",
+        marginTop: 36,
+        margin:10
       },
       paragraph: {
-        marginTop: 10,
-        fontSize: 17,
-        marginLeft:10,
-        flexDirection:"row"
+        fontSize: 13,
+        textAlign: "justify",
+        lineHeight: 24,
+        marginTop: 36,
+        margin:20
     },
     });

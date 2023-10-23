@@ -9,4 +9,4 @@ const NuestraHistoria = () => {
   )
 }
 
-export default NuestraHistoria
+export default NuestraHistoria;

@@ -1,4 +1,5 @@
-import { View, Text, SafeAreaView, ScrollView, Image, StyleSheet, Alert, Button, Linking, } from 'react-native'
+import { View, Text, Image, StyleSheet, Alert, Button, Linking, FlatList } from 'react-native'
+import { ScrollView } from "react-native-gesture-handler";
 import React, {useCallback} from 'react'
 
 const supportedURL = 'https://superate.org.sv/contacto/';
@@ -14,108 +15,89 @@ const OpenURLButton = ({url, children}) => {
     }
   }, [url]);
 
-  return <Button title={children} onPress={handlePress} />;
+  return <Button style={styles.paragraph} title={children} onPress={handlePress} />;
 };
   
 
 export default function NuestroPrograma() {
   return (
-    <SafeAreaView>
-        <ScrollView>
+    <ScrollView style={styles.contenedorScroll}>
+      <View style={styles.container}>
     <Text style={styles.heading}>Nuestro Programa</Text>
-    
-    <Text style={styles.paragraph}>
-        Brinda educación de alta calidad en inglés, informática y valores a jóvenes de 
-        alto rendimiento académico durante tres años. Los jóvenes reciben tres horas diarias 
-        de clase, de forma complementaria y paralela a la educación del sistema público.
-    </Text>
-
-    <></>
-    <Text style={styles.paragraph}>
-        Al finalizar el Programa, obtienen certificaciones internacionales que garantizan un 
-        dominio avanzado del idioma inglés y el manejo eficiente de las herramientas de 
-        Microsoft Office y programación.
-    </Text>
-    <></>
-    <Text style={styles.paragraph}>
-        Los jóvenes también cuentan con una sólida base de valores y reflejan el compromiso 
-        de seguir contribuyendo al desarrollo socioeconómico del país.
-    </Text>
-
+    <Text style={styles.paragraph}>Brinda educación de alta calidad en inglés, informática y valores a jóvenes de alto rendimiento académico durante tres años. Los jóvenes reciben tres horas diarias de clase, de forma complementaria y paralela a la educación del sistema público.</Text>
+    <Text style={styles.paragraph}> Al finalizar el Programa, obtienen certificaciones internacionales que garantizan un dominio avanzado del idioma inglés y el manejo eficiente de las herramientas de Microsoft Office y programación.</Text>
+    <Text style={styles.paragraph}>Los jóvenes también cuentan con una sólida base de valores y reflejan el compromiso de seguir contribuyendo al desarrollo socioeconómico del país.</Text>
     <Text style={styles.heading}>Áreas Curriculares</Text>
-    <View style={styles.imgView}>
-        <Image style={styles.image} source={{uri:'https://superate.org.sv/wp-content/uploads/2018/12/3_areas_curric.jpg'}}/>
-    </View>
-
-
+    <Image style={styles.img} source={require("../assets/areas-curri.jpg")} />
     <Text style={styles.heading}>Requisitos de ingreso:</Text>
-    <Text style={styles.requirements}>
-              1. 13 o 14 años cumplidos
-        {'\n'}2. Cursar 8 grado del sistema público.
-        {'\n'}3. Alto rendimiento académico (mínimo de 8)
-        {'\n'}4. Recomendado por el director de su Centro Escolar.
-        {'\n'}5. Demostrar el deseo y potencial de superación.
-      </Text>
-
-      <Text style={styles.link}>Para más información sobre requisitos haz click<OpenURLButton style={styles.link} url={supportedURL}>AQUÍ</OpenURLButton></Text>
-
-      <View style={styles.imgView}>
-      <Image style={styles.image2} source={{uri:'https://superate.org.sv/wp-content/uploads/2018/10/Webp.net-compress-image.jpg'}}/>
+      <FlatList
+            data={[
+                {key: '• 13 o 14 años cumplidos '},
+                {key: '• Cursar 8 grado del sistema público.'},
+                {key: '• Alto rendimiento académico (mínimo de 8)'},
+                {key: '• Recomendado por el director de su Centro Escolar.'},
+                {key: '• Demostrar el deseo y potencial de superación.'},
+            ]}
+            renderItem={({item}) => <Text style={styles.textoList}>{item.key}</Text>}/>
+      <Image style={styles.img2} source={require("../assets/req-ingreso.jpg")} />
+      <Text style={styles.link}>Para más información sobre requisitos haz click<OpenURLButton style={styles.link2} url={supportedURL}>AQUÍ</OpenURLButton></Text>
       </View>
       </ScrollView>
-</SafeAreaView>
-
   )
 }
 
 const styles = StyleSheet.create({
-    image: {
-        width: 350,
-        height: 200,
-        borderRadius: 0,
+    img: {
+      width: 270,
+        height: 160,
+        marginTop: 36,
+        resizeMode: 'cover',
       },
-      image2:{
-        width: 350,
-        height: 200,
-        marginTop:10,
-        marginLeft:20,
-        marginRight:20
-      },
-      imgView:{
-        alignItems:'center',
-        marginTop:15
-      },
-      container: {
-        flex: 1,
-        padding: 16,
-      },
-      link:{
-        fontSize:18,
-        marginLeft:10,
-        marginTop:20
-      },
+      img2: {
+        width: 280,
+          height: 170,
+          marginTop: 36,
+          resizeMode: 'cover',
+        },
+      contenedorScroll: {
+        marginBottom: 36,
+        backgroundColor: 'white',
+    },
+    container: {
+      flex: 1,
+      alignItems: "center",
+      marginHorizontal: 38,
+  },
       heading: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginTop: 10,
-        marginLeft:10,
-        color:'darkturquoise',
-        fontFamily:'Verdana'
+        color: "#00B6D8",
+        fontSize: 22,
+        textAlign: "center",
+        fontWeight: "bold",
+        marginTop: 36,
+        margin:10
       },
       paragraph: {
-        marginTop: 10,
-        marginLeft:15,
-        marginRight:15,
-        marginEnd:10,
-        fontFamily:'Verdana'
+        fontSize: 12,
+        textAlign: "justify",
+        lineHeight: 24,
+        marginTop: 36,
       },
-      requirements: {
-        fontWeight: 'bold',
-        marginTop: 10,
-        marginLeft:20,
-        marginRight:15,
-        marginEnd:10,
-        fontSize:13,
-        fontFamily:'Verdana'
-      },
+      textoList: {
+        fontSize: 12,
+        textAlign: "justify",
+        lineHeight: 18,
+        marginTop: 9,
+    },
+    link:{
+      marginTop:"10%",
+    },
+    link2:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: 'black',
+    },
 })

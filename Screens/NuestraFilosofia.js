@@ -1,13 +1,12 @@
-import React from 'react';
-import { DrawerItem } from '@react-navigation/drawer';
+import { View, Text } from 'react-native'
+import React from 'react'
 
 const NuestraFilosofia = () => {
   return (
-    <DrawerItem
-      label="Nuestro Programa"
-      onPress={() => navigation.navigate('NuestraFilosofia')}
-    />
-  );
-};
+    <View>
+      <Text>NuestraFilosofia</Text>
+    </View>
+  )
+}
 
-export default NuestraFilosofia;
+export default NuestraFilosofia

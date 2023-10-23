@@ -1,11 +1,11 @@
-import {View,Text , StyleSheet} from "react-native";
+import {View, Text, StyleSheet} from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import TabBarNavigator from "../Navigation/TabBarNavigator";
 
-export default  function QuienesSomos(){
+export default function QuienesSomos({navigation}){
 
-    return(
-        <View>
-            <Text>Quienes Somos</Text>    
-        </View>
+    return(   
+       <TabBarNavigator />        
     )
 }
 
