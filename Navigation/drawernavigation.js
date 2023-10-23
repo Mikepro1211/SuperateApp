@@ -2,7 +2,7 @@ import * as React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //Screens
 import Aliados from "../Screens/Aliados";
-import Home from '../Screens/Home';
+import Home from '../Screens/Home/Home';
 import QuienesSomos from "../Screens/QuienesSomos";
 import Centros from "../Screens/Centros";
 import QueHacemos from "../Screens/QueHacemos";
