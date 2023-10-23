@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native'
-import DrawerNavigation from './Navigation/drawernavigation'
+import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
+
 import StackNavigation from "./Navigation/StackNavigation";
 
 
