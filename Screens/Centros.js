@@ -1,6 +1,7 @@
 import {Text, View, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView, FlatList, Image} from "react-native";
 
 
+
 export default function Centros({navigation}){
     const centros =[{
         id:1 ,
