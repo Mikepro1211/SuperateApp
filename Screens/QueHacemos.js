@@ -1,9 +1,11 @@
-import {View,Text} from "react-native";
+import { View, Text } from 'react-native'
+import React from 'react'
+import TabBarNavigator2 from "../Navigation/TabBarNavigator2"
 
-export default function QueHacemos(){
-    return(
-        <View>
-            <Text>Que Hacemos</Text>
-        </View>
-    )
+const QueHacemos = () => {
+  return (
+    <TabBarNavigator2/>
+  )
 }
+
+export default QueHacemos
