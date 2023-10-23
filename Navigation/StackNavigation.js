@@ -1,18 +1,65 @@
 import {createStackNavigator} from "@react-navigation/stack";
 import DrawerNavigation from "./drawernavigation";
-import Datos from "./datos";
-
+import OnboardingScreen from "../Screens/OnboardingScreen";
+import { useEffect } from "react";
+import { getItem } from '../utils/asyncStorage.js';
+import InformacionCentro from "../Screens/InformacionCentro";
 
 //importaciones de screens llamadas por Stack
-import informacionCentro from "../Screens/InformacionCentro";
+
+import { useState } from "react";
+
 const Stack = createStackNavigator()
 
+
 export default function StackNavigation(){
-    return(
-        <Stack.Navigator >
-        <Stack.Screen name={"index"} component={DrawerNavigation} options={{headerShown:false}}/>
-        <Stack.Screen name={"informacionCentro"} component={informacionCentro} options={{title:"",
-            }}/>
+    
+    
+//ASYNC APP
+
+const [showOnboarding, setOnboarding] = useState(null);
+
+useEffect(()=> {checkOnboarded()},[] )
+
+ const checkOnboarded = async ()=>{
+       let onboarded = await getItem('onboarded');
+      if(onboarded == 1){
+       //hide onboarding
+
+       setOnboarding(false);
+      }else{
+       //show onboardign
+       setOnboarding(true);
+      }
+     }  
+     
+    
+    
+     if(showOnboarding){
+        return(
+       
+       <Stack.Navigator >
+        <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
+        <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
+        <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
+
         </Stack.Navigator>
-    )
+        )
+
+      }else {
+       
+        return(
+            <Stack.Navigator >
+                 <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
+            <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
+            <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
+
+            </Stack.Navigator>
+            ) 
+
+      }
+    
+    
+    
+    
 }
