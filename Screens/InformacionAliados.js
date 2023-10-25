@@ -1,8 +1,6 @@
-import {Text, View, FlatList, StyleSheet, Image} from "react-native";
+import { FlatList , Text } from "react-native"
 
-import { InformacionAliados } from "./InformacionAliados";
-import { TouchableOpacity } from "react-native-gesture-handler";
-export default function Aliados() {
+export function InformacionAliados(){
     const aliados = [
         {
             id:1,
@@ -49,58 +47,8 @@ export default function Aliados() {
         data={aliados}
         keyExtractor={item => item.id}
         renderItem={({item}) => 
-        <View style={styles.card}>
-            <View style={styles.ImageContainer}>
-                <Image style={styles.imagen} source={{uri: item.logo}}/>
-
-            </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>{item.descripcion}</Text>
-            </View>
-            <TouchableOpacity>
-                <Text style={{color:'#000', textAlign:'center', fontSize:20, fontWeight:'bold'}}>Ver más</Text>
-            </TouchableOpacity>
- 
-        </View>
+        <Text>{item.nombre}</Text>
         }
         />
     )
 }
-
-const styles = StyleSheet.create({
-    card:{
-        flexDirection:'column',
-        borderRadius:10,
-        backgroundColor:'#f9f9f9',
-        margin:10 ,
-        padding:60,
-        shadowColor:'#000',
-        shadowOffset:{width: 0, height: 2},
-        shadowOpacity:0.25,
-        shadowRadius:3.84,
-        elevation:5,
-
-    },
-    ImageContainer:{
-        alignItems:'center',
-        margin:1,
-
-    },
-    imagen:{
-        margin:1,
-        width:'100%',
-        height: 120,
-
-    },
-    textContainer:{
-        alignItems:'stretch',
-        backgroundColor:'#f9f9',    
-        paddingTop:10,
-        
-    },
-    text:{
-        fontSize:15,
-        color:'#000',
-        textAlign:'justify',
-    }
-})
