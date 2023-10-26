@@ -4,11 +4,12 @@ import { Card } from 'react-native-paper';
 import { FontAwesome } from '@expo/vector-icons';
 export default function InformacionCentro({navigation , route}) {
     const {centro} = route.params
+    
     return(
         <ScrollView>
             <View style={styles.container}>
 
-                <Carousel onChangePage={()=> console.log("change")} showCounter={true} autoplay={true}  loop={true} >
+                <Carousel  showCounter={true} autoplay={true}  loop={true} >
                     {centro.imagenes.map((imagen, index) => (
                         <Image key={index} style={{ width: 400, height: 250 }} source={{ uri: imagen }}  />))}
                 </Carousel>

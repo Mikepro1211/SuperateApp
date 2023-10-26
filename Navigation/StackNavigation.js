@@ -4,6 +4,7 @@ import OnboardingScreen from "../Screens/OnboardingScreen";
 import { useEffect } from "react";
 import { getItem } from '../utils/asyncStorage.js';
 import InformacionCentro from "../Screens/InformacionCentro";
+import { InformacionAliados } from "../Screens/InformacionAliados";
 
 //importaciones de screens llamadas por Stack
 
@@ -42,6 +43,8 @@ useEffect(()=> {checkOnboarded()},[] )
         <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
         <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
         <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
+        <Stack.Screen name={"InformacionAliados"} component={InformacionAliados} options={{title:""}}/>
+        
 
         </Stack.Navigator>
         )
@@ -53,7 +56,7 @@ useEffect(()=> {checkOnboarded()},[] )
                  <Stack.Screen name={"index"} component={OnboardingScreen} options={{headerShown:false}}/>
             <Stack.Screen name={"Drawer"} component={DrawerNavigation} options={{headerShown:false}}/>
             <Stack.Screen name={"InformacionCentro"} component={InformacionCentro} options={{title:""}}/>
-
+            <Stack.Screen name={"InformacionAliados"} component={InformacionAliados} options={{title:""}}/>
             </Stack.Navigator>
             ) 
 

@@ -2,13 +2,22 @@ import {Text, View, FlatList, StyleSheet, Image} from "react-native";
 
 import { InformacionAliados } from "./InformacionAliados";
 import { TouchableOpacity } from "react-native-gesture-handler";
-export default function Aliados() {
+export default function Aliados({navigation}) {
     const aliados = [
         {
             id:1,
             nombre:"Embajada De Los Estados Unidos",
             descripcion: "La Embajada de Estados Unidos en El Salvador se ha convertido en aliado del Programa, gestionando oportunidades que fortalecen el posicionamiento del Programa y que, en definitiva, representan otras posibilidades de éxito para todos los miembros de la familia ¡Supérate!; entre algunos de sus programas se encuentran: English Access Microscholarship Program y Youth Ambassadors.",
-            logo: "https://superate.org.sv/wp-content/uploads/2018/11/embajada.png"
+            logo: "https://superate.org.sv/wp-content/uploads/2018/11/embajada.png",
+            imagenes:[
+                'https://superate.org.sv/wp-content/uploads/2018/12/a.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/b.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/EMBAJADA-VisitaJuezaSotoMayor.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/EMBAJADA-Visita-Michelle-Obama.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/EMBAJADA-Youth-Ambassadors-edicion-2013.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/IMG_2519.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/12/IMG_6231.jpg',
+            ],
 
         },
         {
@@ -16,18 +25,48 @@ export default function Aliados() {
             nombre:"USAID",
             descripcion:"La Agencia de los Estados Unidos para el Desarrollo Internacional (USAID) firmó una alianza público privada con la Fundación Sagrera Palomo y Microsoft El Salvador en 2010 para el fortalecimiento y la expansión de nuevos Centros ¡Supérate! en El Salvador. Además, USAID ha financiado Becas Semilla para que algunos de los graduados cursen estudios técnicos en Estados Unidos.",
             logo:"https://superate.org.sv/wp-content/uploads/2018/11/usaid.png",
+            imagenes:[
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0000_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0001_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/h6.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0002_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0003_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/3-2.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/05/8.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0004_Lineas.jpg',
+            ],
         },
         {
             id:3,
             nombre:"Microsoft",
             descripcion:"Microsoft El Salvador ha donado todas las licencias de software, sistema operativo y de productividad desde el inicio del Programa en el 2004. También apoyan con capacitaciones para docentes, computadoras para los graduados con mejores desempeños académicos y con becas DIGIGIRLZ.",
             logo:"https://superate.org.sv/wp-content/uploads/2018/11/ms.png",
+            imagenes:[
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0000_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0001_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/h6.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0002_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0003_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/3-2.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/05/8.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0004_Lineas.jpg',
+            ],
         },
         {
             id:4,
             nombre:"Hugo",
             descripcion:"hugo, a través de su iniciativa hugoImpact, impulsa el talento digital en el país con la entrega de becas para estudios superiores, talleres y charlas sobre programación, desarrollo de proyectos en el área de informática, capacitación docente, así como pasantías",
             logo:"https://superate.org.sv/wp-content/uploads/2022/05/hugo-Branding-06.jpg",
+            imagenes:[
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0000_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0001_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/h6.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0002_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0003_Lineas.jpg',
+                'https://superate.org.sv/wp-content/uploads/2018/11/3-2.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/05/8.jpg',
+                'https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0004_Lineas.jpg',
+            ],
         },
         {
             id:5,
@@ -49,18 +88,20 @@ export default function Aliados() {
         data={aliados}
         keyExtractor={item => item.id}
         renderItem={({item}) => 
+        <View>
         <View style={styles.card}>
             <View style={styles.ImageContainer}>
                 <Image style={styles.imagen} source={{uri: item.logo}}/>
 
             </View>
-            <View style={styles.textContainer}>
+            
+        </View>
+        <View style={{padding:20}}>
                 <Text style={styles.text}>{item.descripcion}</Text>
             </View>
-            <TouchableOpacity>
-                <Text style={{color:'#000', textAlign:'center', fontSize:20, fontWeight:'bold'}}>Ver más</Text>
+            <TouchableOpacity onPress={()=>{navigation.navigate("InformacionAliados",{aliados:item})}} style={styles.button}>
+                <Text style={styles.textButon}>Ver más</Text>
             </TouchableOpacity>
- 
         </View>
         }
         />
@@ -72,8 +113,8 @@ const styles = StyleSheet.create({
         flexDirection:'column',
         borderRadius:10,
         backgroundColor:'#f9f9f9',
-        margin:10 ,
-        padding:60,
+        margin:5 ,
+        padding:10,
         shadowColor:'#000',
         shadowOffset:{width: 0, height: 2},
         shadowOpacity:0.25,
@@ -82,25 +123,29 @@ const styles = StyleSheet.create({
 
     },
     ImageContainer:{
-        alignItems:'center',
-        margin:1,
-
+        alignItems: 'center',
     },
     imagen:{
-        margin:1,
-        width:'100%',
-        height: 120,
+        width:"100%",
+        height: 140,
 
-    },
-    textContainer:{
-        alignItems:'stretch',
-        backgroundColor:'#f9f9',    
-        paddingTop:10,
-        
     },
     text:{
         fontSize:15,
         color:'#000',
-        textAlign:'justify',
+        textAlign:"justify",
+    },
+
+    textButon:{
+        color:'#000', textAlign:'center', fontSize:20, 
+    },
+    button:{
+        backgroundColor:'#8DC63F',
+        margin:10,
+        width:100,
+        alignItems:'center',
+        alignSelf:'center',
+        borderRadius: 40,
+
     }
 })
