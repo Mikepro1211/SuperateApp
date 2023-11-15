@@ -1,5 +1,4 @@
-import {View, Text, StyleSheet} from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react'
 import NuestraHistoria from "../Screens/NuestraHistoria";
@@ -11,7 +10,7 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
 
   function Screen1() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <NuestraHistoria/>
       </View>
     );
@@ -19,24 +18,23 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
 
   function Screen2() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <NuestraFilosofia/>
       </View>
     );
   }
-  
 
   function Screen3() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <EfectoMultiplicador/>
       </View>
     );
   }
-
+  
   function Screen4() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View >
         <NuestroEquipo/>
       </View>
     );
@@ -46,11 +44,26 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
   
   export default function TabBarNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator 
+        screenOptions={{
+          tabBarLabelStyle: {
+            textTransform: "capitalize", 
+            fontWeight:"bold",
+            width:75,
+            height:30,
+            padding:0,
+          }, 
+          tabBarIndicatorStyle:{
+            height: 7,
+            borderRadius:5,
+            backgroundColor:"#00B6D8",
+          },
+          }}>
           <Tab.Screen name="Nuestra Historia" component={Screen1} />
           <Tab.Screen name="Nuestra Filosofia" component={Screen2} />
-          <Tab.Screen name="Efecto  Multiplicador" component={Screen3} />
+          <Tab.Screen name="Efecto Multiplicador" component={Screen3} />
           <Tab.Screen name="Nuestro Equipo" component={Screen4} />
         </Tab.Navigator>
     );
-  }
+  };
+
