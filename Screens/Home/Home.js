@@ -1,14 +1,16 @@
-import {View, Text, StyleSheet, Dimensions,ScrollView,SafeAreaView,Image} from 'react-native'
+import {View, Text, StyleSheet, Dimensions, ScrollView, SafeAreaView, Image, TouchableOpacity, Linking} from 'react-native'
 import AutoplayCarousel from './Carousel';
 import Datos from './Datos';
 import Exito from './Exito';
 import Logros from './Logros/Logros';
+import ImgHome from './components/ImgHome';
+
+
 
 const screenWidth = Dimensions.get("window").width;
+
 export default function Home() {
 
-
-    
     return(
         <SafeAreaView style={styles.view}>
         <ScrollView style={styles.scrollView}>
@@ -39,15 +41,10 @@ export default function Home() {
             <View>
             <Logros style={styles.carusel}/>
             </View>
-            <Text style={styles.text1}>Nuestros Socios de la Empresa Privada</Text>
+            <Text style={styles.text2}>Nuestros Socios de la Empresa Privada</Text>
             <View>
-            <Image
-               style={{ padding:10 }}
-               source={require('../../assets/images/patro.png')}
-                   />
+                <ImgHome/>
             </View>
-         
-
        </ScrollView>
        </SafeAreaView>
     )
@@ -80,8 +77,17 @@ const styles = StyleSheet.create({
         marginTop:8,
         color: '#808285',
         textShadowColor: '#808285', // Color del borde
+        textShadowOffset: { width: 1, height: 1 }
+    },
+    text2: {
+        fontSize: 20,
+        marginLeft:20,
+        marginTop:11,
+        fontWeight:"bold",
+        color: "#00B6D8",
+        textShadowColor: '#808285', // Color del borde
         textShadowOffset: { width: 1, height: 1 }, 
-    }
-
-
+        textAlign:"center",
+        padding:20
+    },
 })
