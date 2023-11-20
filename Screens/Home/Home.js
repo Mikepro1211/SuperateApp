@@ -28,9 +28,9 @@ export default function Home() {
                 <Datos/>
             </View>
 
-            <Text style={styles.text}>Videos</Text>
+           
             <View>
-            <Videos/>
+          
             </View>
 
             <Text style={styles.text}>Casos de Éxito</Text>
