@@ -29,7 +29,7 @@ const data = [
   },
 ];
 
-const HorizontalImageGallery = () => {
+const Exito = () => {
   return (
     <View>
       <FlatList
@@ -44,4 +44,4 @@ const HorizontalImageGallery = () => {
   );
 };
 
-export default HorizontalImageGallery;
+export default Exito;

@@ -45,11 +45,11 @@ export default function Home() {
 
             <Text style={styles.text1}>Nuestros Socios de la Empresa Privada</Text>
             <View>
-            <Logros style={styles.carusel}/>
+          
             </View>
             <Text style={styles.text}>Casos de Éxito</Text>
             <View>
-            <Exito style={styles.carusel}/>
+           
             </View>
 
        </ScrollView>

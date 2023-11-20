@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 
-export default function App() {
+export default function Datos1() {
   return (
   
       <View style={styles.buttonContainer}>

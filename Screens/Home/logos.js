@@ -3,7 +3,7 @@ import { StyleSheet, View, Image } from "react-native";
 import Lightbox from 'react-native-lightbox';
 
 
-export default function Logo () {
+export default function Logos () {
  
 
   return (
