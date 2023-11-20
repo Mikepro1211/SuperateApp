@@ -1,9 +1,11 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View , TouchableOpacity} from 'react-native';
 import { Carousel } from "react-native-ui-lib";
 import { Card } from 'react-native-paper';
 import { FontAwesome } from '@expo/vector-icons';
+
+
 export default function InformacionCentro({navigation , route}) {
-    const {centro} = route.params
+    const {centro, logo} = route.params
     
     return(
         <ScrollView>
@@ -29,7 +31,7 @@ export default function InformacionCentro({navigation , route}) {
                 </View>
 
                 <View style={styles.containerDos}>
-                    <Image style={styles.imagen} source={{uri: centro.logo}}/>
+                    <Image style={styles.imagen} source={logo}/>
                     <Text style={styles.descripcion}>{centro.descripcion}</Text>
                 </View>
                 < View>
@@ -49,7 +51,9 @@ export default function InformacionCentro({navigation , route}) {
                                 <Text style={styles.contactoText}>{centro.direccion}</Text>
                             </View>
                             <View style={styles.redesContainer}>
+                                <TouchableOpacity onPress={()=>{FacebookURL}}>
                                 <FontAwesome name="facebook" size={24} color="black" />
+                                </TouchableOpacity>
                                 <FontAwesome name="twitter" size={24} color="black" />
                                 <FontAwesome name="instagram" size={24} color="black" />
                             </View>

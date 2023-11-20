@@ -2,29 +2,25 @@ import {Text ,View ,StyleSheet, ScrollView , KeyboardAvoidingView} from "react-n
 import {TextField} from "react-native-ui-lib";
 import {TextInput} from "react-native-paper";
 import { Platform } from "react-native";
+import { useRef } from "react";
+import {WebView} from "react-native-webview";
 
 
 export default  function Contacto(){
+    const webViewRef = useRef(null);
+    const injectedJs = `
+    const unwantedElements = document.querySelectorAll('.header, .footer');
+    unwantedElements.forEach(element => element.style.display = 'none');
+  `;
     return(
-        <ScrollView style={styles.container}>
-        
-            <View style={styles.ContactConainer}>
-                <Text style={styles.contactText}>Contacta las oficinas institucionales</Text>
-             </View>
-            <KeyboardAvoidingView style={{padding:16 , backgroundColor:'#ff3'}}behavior={Platform.OS=='ios'?'padding':'height'}>
-              
-                <TextField style={styles.input}
-                    placeholder="Nombre"
-                    floatingPlaceholder
-                    floatOnFocus
-                    containerStyle={{marginBottom: 20}}/>
-                   
-
-                
-            </KeyboardAvoidingView>
-            
-              
-        </ScrollView>
+        <View style={styles.container}>
+      <WebView
+        source={{ uri: 'https://superate.org.sv/contacto/' }}
+        style={{ flex: 1 }}
+        ref={webViewRef}
+        onLoadEnd={() => webViewRef.current.injectJavaScript(injectedJs)}
+      />
+    </View>
     )
 }
 
@@ -38,7 +34,6 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
-        padding:16,
         backgroundColor:"#ffff"
     },
     ContactConainer:{
