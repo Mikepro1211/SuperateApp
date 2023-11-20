@@ -10,7 +10,7 @@ import Contacto from "../Screens/Contacto";
 
 //importacion de drawerNavigation
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer';
+import { DrawerItem, DrawerContentScrollView , DrawerContent} from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
 import Drawerview from "./drawerview";
 import {Image, View} from "react-native";
