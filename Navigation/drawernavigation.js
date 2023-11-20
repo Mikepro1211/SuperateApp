@@ -16,8 +16,8 @@ import Drawerview from "./drawerview";
 import {Image, View} from "react-native";
 import drawerMenu from './drawerMenu';
 import NuestroEquipo from '../Screens/NuestroEquipo';
-import NuestraHistoria from '../Screens/NuestraHistoria';
-import NuestraFilosofia from '../Screens/NuestraFilosofia';
+import NuestraHistoria from '../Screens/Historia/NuestraHistoria';
+import NuestraFilosofia from '../Screens/Filosofia/NuestraFilosofia';
 import EfectoMultiplicador from '../Screens/EfectoMultiplicador';
 import NuestroPrograma from '../Screens/NuestroPrograma';
   

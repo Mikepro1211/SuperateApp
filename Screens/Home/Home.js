@@ -3,6 +3,9 @@ import AutoplayCarousel from './Carousel';
 import Datos from './Datos';
 import Exito from './Exito';
 import Logros from './Logros/Logros';
+import Videos  from './Video';
+import Logos  from './logos';
+
 
 const screenWidth = Dimensions.get("window").width;
 export default function Home() {
@@ -27,7 +30,7 @@ export default function Home() {
 
             <Text style={styles.text}>Videos</Text>
             <View>
-            <AutoplayCarousel style={styles.carusel} />
+            <Videos/>
             </View>
 
             <Text style={styles.text}>Casos de Éxito</Text>
@@ -39,14 +42,15 @@ export default function Home() {
             <View>
             <Logros style={styles.carusel}/>
             </View>
+
             <Text style={styles.text1}>Nuestros Socios de la Empresa Privada</Text>
             <View>
-            <Image
-               style={{ padding:10 }}
-               source={require('../../assets/images/patro.png')}
-                   />
+            <Logros style={styles.carusel}/>
             </View>
-         
+            <Text style={styles.text}>Casos de Éxito</Text>
+            <View>
+            <Exito style={styles.carusel}/>
+            </View>
 
        </ScrollView>
        </SafeAreaView>

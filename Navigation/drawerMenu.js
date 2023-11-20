@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { DrawerItem } from '@react-navigation/drawer';
-import NuestraHistoria from '../Screens/NuestraHistoria';
-import NuestraFilosofia from '../Screens/NuestraFilosofia';
+import NuestraHistoria from '../Screens/Historia/NuestraHistoria';
+import NuestraFilosofia from '../Screens/Filosofia/NuestraFilosofia';
 import EfectoMultiplicador from '../Screens/EfectoMultiplicador';
 import NuestroEquipo from '../Screens/NuestroEquipo';
 

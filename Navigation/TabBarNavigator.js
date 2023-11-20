@@ -2,8 +2,8 @@ import {View, Text, StyleSheet} from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react'
-import NuestraHistoria from "../Screens/NuestraHistoria";
-import NuestraFilosofia from "../Screens/NuestraFilosofia";
+import NuestraHistoria from "../Screens/Historia/NuestraHistoria";
+import NuestraFilosofia from "../Screens/Filosofia/NuestraFilosofia";
 import EfectoMultiplicador from "../Screens/EfectoMultiplicador";
 import NuestroEquipo from "../Screens/NuestroEquipo";
 
@@ -47,10 +47,10 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
   export default function TabBarNavigator() {
     return (
         <Tab.Navigator>
-          <Tab.Screen name="Nuestra Historia" component={Screen1} />
-          <Tab.Screen name="Nuestra Filosofia" component={Screen2} />
+          <Tab.Screen name="Historia" component={Screen1} />
+          <Tab.Screen name="Filosofia" component={Screen2} />
           <Tab.Screen name="Efecto  Multiplicador" component={Screen3} />
-          <Tab.Screen name="Nuestro Equipo" component={Screen4} />
+          <Tab.Screen name="Equipo" component={Screen4} />
         </Tab.Navigator>
     );
   }

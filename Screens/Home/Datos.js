@@ -12,18 +12,17 @@ export default function App() {
           source={require('../../assets/animations/lottie2.json')} 
           autoPlay
           loop
-          marginTop={'-40%'}
+          marginTop={'-20%'}
         />
           <Text style={styles.buttonText1}>+1.5k Graduados</Text>
         </TouchableOpacity>
-       
        
         <View style={styles.verticalButtons}>
           <TouchableOpacity style={[styles.button2]}>
             <Text style={styles.buttonText}>Liderazgo</Text>
           </TouchableOpacity>
           <TouchableOpacity  style={[styles.button3]}>
-            <Text style={styles.buttonText}>Excelencia</Text>
+            <Text style={styles.buttonText}>¡Aplica ya!</Text>
           </TouchableOpacity>
         </View>
       </View>
