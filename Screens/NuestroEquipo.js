@@ -1,181 +1,206 @@
-import {FlatList, View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { View, Text, StyleSheet, ScrollView, FlatList, Image, Dimensions } from 'react-native';
+import React from 'react';
+import { ListItem, Avatar } from 'react-native-elements';
 
-export default function Data  ({navigation}){
-    const junta =[{
-        id:1 ,
-        nombre: 'Ricardo Sagrera Bogle',
-        descripcion: 'Presidente y Fundador del Programa ¡Supérate! y Director Propietario por Centro ¡Supérate! Hilasal',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/rsb.jpg',
-    },
-    {
-        id:2 ,
-        nombre: 'Arturo Sagrera Palomo',
-        descripcion: 'Director General Programa ¡Supérate!',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/asp.jpg',
-    },
-    {
-        id:3 ,
-        nombre: 'Jaime R. Palomo',
-        descripcion: 'Director Propietario por Centro ¡Supérate! ADOC',
-        logo: 'https://superate.org.sv/wp-content/uploads/2022/05/jaime_palomo.jpg',
-    },
-    {
-        id:4 ,
-        nombre: 'María Elena Fábrega',
-        descripcion: 'Directora Propietaria por Centro ¡Supérate! Fundación Alberto Motta',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/mary_fabrega.jpg',
-    },{
-        id:5 ,
-        nombre: 'Michelle De Poma',
-        descripcion: 'Directora Propietaria por Centro ¡Supérate! Fundación Poma',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/michelle_de_poma.jpg',
-    },
-    {
-        id:6 ,
-        nombre: 'Mary Alice De Frech',
-        descripcion: 'Directora Propietaria por Centro ¡Supérate! Merlet',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/mary_alice_siman_de_frech.jpg',
-    },
-    {
-        id:7 ,
-        nombre: 'Marci Mizrachi',
-        descripcion: 'Directora Propietaria por Centro ¡Supérate! Fundación JUPÁ',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/marci_mizrachi.jpg',
-    },
-    {
-        id:8 ,
-        nombre: 'Juan F. Salaverría',
-        descripcion: 'Director Propietario por Centro ¡Supérate! Grupo Q',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/juan_f_salaverria.jpg',
-    },
-    {
-        id:9 ,
-        nombre: 'María Cristina Salazar',
-        descripcion: 'Directora Propietaria por Centro ¡Supérate! Fundación Provivienda',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/mcs.jpg',
-    }];
-    
-    const equipo=[{
-        id:10 ,
-        nombre: 'Rodrigo Bustamante',
-        descripcion: 'Director Ejecutivo Programa ¡Supérate!',
-        image: 'https://superate.org.sv/wp-content/uploads/2021/10/our_team_RB.png',
-    },
-    {
-        id:11 ,
-        nombre: 'Irene Flores',
-        descripcion: 'Directora Académica Programa ¡Supérate!',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/irene_flores.jpg',
-    },
-    {
-        id:12 ,
-        nombre: 'Leyla De Guzmán',
-        descripcion: 'Directora de Operaciones Programa ¡Supérate!',
-        logo: 'https://superate.org.sv/wp-content/uploads/2022/05/leyla_guzman.jpg',
-    },
-    {
-        id:13 ,
-        nombre: 'Saraí Aguilar',
-        descripcion: 'Administradora Contable Programa ¡Supérate!',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/sarai_aguilar.jpg',
-    },{
-        id:14 ,
-        nombre: 'Rodrigo Castro',
-        descripcion: 'Coordinador de Proyectos y Comunicaciones Programa ¡Supérate!',
-        image: 'https://superate.org.sv/wp-content/uploads/2022/05/rodrigo_castro.jpg',
-    }
-    ];
+const list = [
+  {
+    name: 'Ricardo Sagrera Bogle',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/rsb.jpg',
+    subtitle: 'Presidente y Fundador del Programa ¡Supérate! y Director Propietario por Centro ¡Supérate! Hilasal'
+  },
+  {
+    name: 'Arturo Sagrera Palomo',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/asp.jpg',
+    subtitle: 'Director General Programa ¡Supérate!'
+  },
+  {
+    name: 'Jaime R. Palomo',
+    subtitle: 'Director Propietario por Centro ¡Supérate! ADOC',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/jaime_palomo.jpg',
+},
+{
+    name: 'María Elena Fábrega',
+    subtitle: 'Directora Propietaria por Centro ¡Supérate! Fundación Alberto Motta',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/mary_fabrega.jpg',
+},
+{
+    name: 'Michelle De Poma',
+    subtitle: 'Directora Propietaria por Centro ¡Supérate! Fundación Poma',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/michelle_de_poma.jpg',
+},
+{
+    name: 'Mary Alice De Frech',
+    subtitle: 'Directora Propietaria por Centro ¡Supérate! Merlet',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/mary_alice_siman_de_frech.jpg',
+},
+{
+    name: 'Marci Mizrachi',
+    subtitle: 'Directora Propietaria por Centro ¡Supérate! Fundación JUPÁ',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/marci_mizrachi.jpg',
+},
+{
+    name: 'Juan F. Salaverría',
+    subtitle: 'Director Propietario por Centro ¡Supérate! Grupo Q',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/juan_f_salaverria.jpg',
+},
+{
+    name: 'María Cristina Salazar',
+    subtitle: 'Directora Propietaria por Centro ¡Supérate! Fundación Provivienda',
+    avatar_url: 'https://superate.org.sv/wp-content/uploads/2022/05/mcs.jpg',
+}];
 
-    const renderItem = ({ item }) => {
-        return (
-            <View style={styles.card}>
-              <Image source={{ uri: item.image }} style={styles.image} />
-              <Text style={styles.nombre}>{item.nombre}</Text>
-              <Text style={styles.descripcion}>{item.descripcion}</Text>
-            </View>
-        );
-      };
+const equipo=[
+  {
+  id:10 ,
+  nombre: 'Rodrigo Bustamante',
+  descripcion: 'Director Ejecutivo Programa ¡Supérate!',
+  image: 'https://superate.org.sv/wp-content/uploads/2021/10/our_team_RB.png',
+},
+{
+  id:11 ,
+  nombre: 'Irene Flores',
+  descripcion: 'Directora Académica Programa ¡Supérate!',
+  image: 'https://superate.org.sv/wp-content/uploads/2022/05/irene_flores.jpg',
+},
+{
+  id:12 ,
+  nombre: 'Leyla De Guzmán',
+  descripcion: 'Directora de Operaciones Programa ¡Supérate!',
+  image: 'https://superate.org.sv/wp-content/uploads/2022/05/leyla_guzman.jpg',
+},
+{
+  id:13 ,
+  nombre: 'Saraí Aguilar',
+  descripcion: 'Administradora Contable Programa ¡Supérate!',
+  image: 'https://superate.org.sv/wp-content/uploads/2022/05/sarai_aguilar.jpg',
+},{
+  id:14 ,
+  nombre: 'Rodrigo Castro',
+  descripcion: 'Coordinador de Proyectos y Comunicaciones Programa ¡Supérate!',
+  image: 'https://superate.org.sv/wp-content/uploads/2022/05/rodrigo_castro.jpg',
+}];
 
-    
-      return (
-        <ScrollView style={styles.contenedorScroll}>
-        <View style={styles.container}>
-        <Text style={styles.heading}>Junta Directiva</Text>
-        <Text style={styles.paragraph}>Está compuesta por el presidente y representantes de los concesionarios del Programa ¡Supérate!.</Text>
-        <FlatList
-          data={junta}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-        />
-        <Text style={styles.heading}>Equipo Institucional</Text>
-        <Text style={styles.paragraph}>Está compuesto por el Director Ejecutivo, Directora Académica, Directora de Operaciones, 
-        Administradora Contable y Coordinador de Proyectos y Comunicaciones.</Text>
-        <FlatList
-          data={equipo}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-        />
-        </View>
-        </ScrollView>
-    )}
+const renderItem = ({ item }) => {
+  return (
+      <View style={styles.card}>
+        <Image source={{ uri: item.image }} style={styles.image} />
+        <Text style={styles.nombre}>{item.nombre}</Text>
+        <Text style={styles.descripcion}>{item.descripcion}</Text>
+      </View>
+  );
+};
 
-    
-    const styles = StyleSheet.create({
-      item: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
-      },
-      contenedorScroll: {
-        marginBottom: 36,
-        backgroundColor: 'white',
+const NuestroEquipo = () => {
+  return (
+    <ScrollView>
+    <View style={styles.container}>
+    <Text style={styles.heading}>Junta Directiva</Text>
+      <Text style={styles.paragraph}>Está compuesta por el presidente y representantes de los concesionarios del Programa ¡Supérate!.</Text>
+  {
+    list.map((l, i) => (
+      <ListItem key={i} bottomDivider>
+        <Avatar style={styles.photo} source={{uri: l.avatar_url}}/>
+        <ListItem.Content>
+          <ListItem.Title style={styles.title}>{l.name}</ListItem.Title>
+          <ListItem.Subtitle style={styles.description}>{l.subtitle}</ListItem.Subtitle>
+        </ListItem.Content>
+      </ListItem>
+    ))
+  }
+   <Text style={styles.heading}>Equipo Institucional</Text>
+      <Text style={styles.paragraph}>Está compuesto por el Director Ejecutivo, Directora Académica, Directora de Operaciones, Administradora Contable y Coordinador de Proyectos y Comunicaciones.</Text>
+      <FlatList 
+      data={equipo} 
+      renderItem={renderItem} 
+      keyExtractor={(item) => item.id.toString()} 
+      numColumns={2}
+          style={{
+            marginLeft: 10,
+            marginRight: 10,
+      }}/>
+    </View>
+    </ScrollView>
+  );
+}
+
+const { width, height } = Dimensions.get("screen");
+
+const styles = StyleSheet.create({
+  container: {
+      backgroundColor: 'white',
+      color:"white",
+      paddingStart:10
+  },
+  title: {
+      fontSize: 20,
+      paddingLeft:7,
+      color: '#000',
+      fontWeight:"bold"
+  },
+  description: {
+      fontSize: 15,
+      padding:5,
+      fontStyle: 'normal',
+  },
+  photo: {
+    shadowOffset: {
+      width: 16,
+      height: 16,
     },
-      image: {
-        width: 120,
-        height: 120,
-        borderRadius: 25,
-      },
-      nombre: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        alignContent:"center",
-        marginLeft: 10,
-        padding:5
-      },
-      descripcion: {
-        fontSize: 14,
-        marginLeft: 10,
-        padding: 5,
+    shadowColor: "#fff",
+    shadowRadius: 30,
+    width: "25%",
+    height: height * 0.1,
+    borderRadius: 100,
+    overflow : 'hidden',
+    marginVertical : 10
+  },
+  heading: {
+    color: "#00B6D8",
+    fontSize: 30,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginTop: 20,
+    margin:5
+  },
+  paragraph: {
+    fontSize: 13,
+    textAlign: "justify",
+    lineHeight: 24,
+    marginTop: 20,
+    margin:20
+},
+card:{
+  backgroundColor: "#fff",
+  padding: 12,
+  alignItems: "center",
+  justifyContent: "center",
+  shadowColor: "#000",
+  shadowOffset: { width: 0, height: 20 },
+  shadowOpacity: 0.05,
+  shadowRadius: 5,
+  marginTop: 15,
+  width: '45%',
+  margin: '2.5%',
+},
+image: {
+  width: 120,
+  height: 120,
+  borderRadius: 25,
+},
+nombre: {
+  fontSize: 16,
+  fontWeight: 'bold',
+  textAlign:"center",
+  marginLeft: 0,
+  padding:5
+},
+descripcion: {
+  fontSize: 14,
+  padding: 0,
+  textAlign:"center"
 
-      },
-      card:{
-        backgroundColor:"#fff",
-        padding: 15,
-        alignItems:"center",
-        justifyContent:"center",
-        shadowColor:"#000",
-        shadowOffset:{width: 0, height:10},
-        shadowOpacity:0.2,
-        shadowRadius:10,
-        marginTop:20,
-      },
-      heading: {
-        color: "#00B6D8",
-        fontSize: 30,
-        textAlign: "center",
-        fontWeight: "bold",
-        marginTop: 36,
-        margin:10
-      },
-      paragraph: {
-        fontSize: 13,
-        textAlign: "justify",
-        lineHeight: 24,
-        marginTop: 36,
-        margin:20
-    },
-    });
+},
+});
+
+export default NuestroEquipo;

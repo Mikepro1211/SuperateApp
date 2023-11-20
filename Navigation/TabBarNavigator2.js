@@ -37,7 +37,18 @@ import EnfoqueCalidad from "../Screens/EnfoqueCalidad";
   
   export default function TabBarNavigator2() {
     return (
-        <Tab.Navigator>
+      <Tab.Navigator 
+      screenOptions={{
+        tabBarLabelStyle: {
+          textTransform: "capitalize", 
+          fontWeight:"bold",
+          alignItems:"center",
+        }, 
+        tabBarIndicatorStyle:{
+          height: 7,
+          borderRadius:5,
+          backgroundColor:"#00B6D8"
+        }}}>
           <Tab.Screen name="Nuestro Programa" component={Screen1} />
           <Tab.Screen name="Enfoque en la Calidad" component={Screen2} />
           <Tab.Screen name="Impacto" component={Screen3} />

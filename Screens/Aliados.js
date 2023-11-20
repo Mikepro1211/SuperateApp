@@ -1,9 +1,12 @@
-import {Text, View} from "react-native";
+import { View, Text } from 'react-native'
+import React from 'react'
 
-export default function Aliados() {
-    return(
-        <View>
-            <Text>Aliados</Text>
-        </View>
-    )
+const Aliados = () => {
+  return (
+    <View>
+      <Text>Aliados</Text>
+    </View>
+  )
 }
+
+export default Aliados

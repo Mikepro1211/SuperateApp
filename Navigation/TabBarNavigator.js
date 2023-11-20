@@ -1,17 +1,16 @@
-import {View, Text, StyleSheet} from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react'
 import NuestraHistoria from "../Screens/Historia/NuestraHistoria";
-import NuestraFilosofia from "../Screens/Filosofia/NuestraFilosofia";
 import EfectoMultiplicador from "../Screens/EfectoMultiplicador";
 import NuestroEquipo from "../Screens/NuestroEquipo";
+import NuestraFilosofia from "../Screens/Filosofia/NuestraFilosofia";
 
 
 
   function Screen1() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <NuestraHistoria/>
       </View>
     );
@@ -19,24 +18,23 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
 
   function Screen2() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <NuestraFilosofia/>
       </View>
     );
   }
-  
 
   function Screen3() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
         <EfectoMultiplicador/>
       </View>
     );
   }
-
+  
   function Screen4() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View >
         <NuestroEquipo/>
       </View>
     );
@@ -46,11 +44,25 @@ import NuestroEquipo from "../Screens/NuestroEquipo";
   
   export default function TabBarNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator 
+        screenOptions={{
+          tabBarLabelStyle: {
+            textTransform: "capitalize", 
+            fontWeight:"bold",
+            width:75,
+            height:30,
+            padding:0,
+          }, 
+          tabBarIndicatorStyle:{
+            height: 7,
+            borderRadius:5,
+            backgroundColor:"#00B6D8",
+          },
+          }}>
           <Tab.Screen name="Historia" component={Screen1} />
-          <Tab.Screen name="Filosofia" component={Screen2} />
-          <Tab.Screen name="Efecto  Multiplicador" component={Screen3} />
-          <Tab.Screen name="Equipo" component={Screen4} />
+          <Tab.Screen name=" Filosofia" component={Screen2} />
+          <Tab.Screen name=" Equipo" component={Screen4} />
         </Tab.Navigator>
     );
-  }
+  };
+

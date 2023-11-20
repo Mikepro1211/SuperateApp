@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 
-export default function Datos1() {
+export default function App() {
   return (
   
       <View style={styles.buttonContainer}>
@@ -12,17 +12,18 @@ export default function Datos1() {
           source={require('../../assets/animations/lottie2.json')} 
           autoPlay
           loop
-          marginTop={'-20%'}
+          marginTop={'-10%'}
         />
           <Text style={styles.buttonText1}>+1.5k Graduados</Text>
         </TouchableOpacity>
+       
        
         <View style={styles.verticalButtons}>
           <TouchableOpacity style={[styles.button2]}>
             <Text style={styles.buttonText}>Liderazgo</Text>
           </TouchableOpacity>
           <TouchableOpacity  style={[styles.button3]}>
-            <Text style={styles.buttonText}>¡Aplica ya!</Text>
+            <Text style={styles.buttonText}>Excelencia</Text>
           </TouchableOpacity>
         </View>
       </View>

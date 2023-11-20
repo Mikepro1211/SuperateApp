@@ -5,10 +5,6 @@ import TabBarNavigator from "../Navigation/TabBarNavigator";
 export default function QuienesSomos({navigation}){
 
     return(   
-       <TabBarNavigator />        
+       <TabBarNavigator/>    
     )
-}
-
-const styles = StyleSheet.create({
-
-})
+};

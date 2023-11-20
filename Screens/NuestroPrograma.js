@@ -40,7 +40,6 @@ export default function NuestroPrograma() {
             ]}
             renderItem={({item}) => <Text style={styles.textoList}>{item.key}</Text>}/>
       <Image style={styles.img2} source={require("../assets/req-ingreso.jpg")} />
-      <Text style={styles.link}>Para más información sobre requisitos haz click<OpenURLButton style={styles.link2} url={supportedURL}>AQUÍ</OpenURLButton></Text>
       </View>
       </ScrollView>
   )

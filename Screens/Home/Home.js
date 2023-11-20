@@ -1,21 +1,22 @@
-import {View, Text, StyleSheet, Dimensions,ScrollView,SafeAreaView,Image} from 'react-native'
+import {View, Text, StyleSheet, Dimensions, ScrollView, SafeAreaView, Image, TouchableOpacity, Linking} from 'react-native'
 import AutoplayCarousel from './Carousel';
 import Datos from './Datos';
 import Exito from './Exito';
 import Logros from './Logros/Logros';
-import Videos  from './Video';
-import Logos  from './logos';
+
+
+import ImgHome from './components/ImgHome';
+
 
 
 const screenWidth = Dimensions.get("window").width;
+
 export default function Home() {
 
-
-    
     return(
         <SafeAreaView style={styles.view}>
         <ScrollView style={styles.scrollView}>
-            <Text style={{marginTop:20, fontSize: 20, marginLeft:20, fontFamily: 'Roboto',  color: '#808285',}}>¡Supérate!</Text>
+            <Text style={{marginTop:20, fontSize: 20, marginLeft:20, color: '#808285',}}>¡Supérate!</Text>
            
             
             <View style={{borderRadius:20}}>
@@ -43,13 +44,13 @@ export default function Home() {
             <Logros style={styles.carusel}/>
             </View>
 
-            <Text style={styles.text1}>Nuestros Socios de la Empresa Privada</Text>
+
+
+
+
+            <Text style={styles.text2}>Nuestros Socios de la Empresa Privada</Text>
             <View>
-          
-            </View>
-            <Text style={styles.text}>Casos de Éxito</Text>
-            <View>
-           
+                <ImgHome/>
             </View>
 
        </ScrollView>
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginTop:4,
         color: '#808285',
-        fontFamily: 'Roboto',
         textShadowColor: '#808285', // Color del borde
         textShadowOffset: { width: 1, height: 1 }, 
     },
@@ -84,10 +84,18 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginTop:8,
         color: '#808285',
-        fontFamily: 'Roboto',
+        textShadowColor: '#808285', // Color del borde
+        textShadowOffset: { width: 1, height: 1 }
+    },
+    text2: {
+        fontSize: 20,
+        marginLeft:20,
+        marginTop:11,
+        fontWeight:"bold",
+        color: "#00B6D8",
         textShadowColor: '#808285', // Color del borde
         textShadowOffset: { width: 1, height: 1 }, 
-    }
-
-
+        textAlign:"center",
+        padding:20
+    },
 })

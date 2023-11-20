@@ -1,10 +1,10 @@
-import {Text ,View} from "react-native";
+import { View, Text } from 'react-native'
+import React from 'react'
 
-
-export default  function Contacto(){
-    return(
-        <View>
-            <Text>Contacto</Text>
-        </View>
-    )
+export default function Contacto() {
+  return (
+    <View>
+      <Text>Contacto</Text>
+    </View>
+  )
 }
