@@ -54,15 +54,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
+    borderColor: 'transparent',
   },
   column: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: 'transparent',
   },
   card: {
     padding: 2,
     margin: 5,
+    borderColor: 'transparent',
   },
   images: {
     width: 150,

@@ -34,7 +34,7 @@ export default function DrawerNavigation(navigation) {
                               },
                               headerTitle: ({focused, color, size}) => (
                                   <View style={{flex:1, justifyContent:'flex-end', flexDirection:"row", alignItems:'center' , marginLeft:250}}>
-                                  <Image source={require('../assets/logoheaderNavigation.png')} style={{width: 70, height: 35  , resizeMode:'contain'}}/>
+                                  <Image source={require('../assets/logo.png')} style={{width: 70, height: 35  , resizeMode:'contain'}}/>
                                   </View>
                               ),
                               //color to show when the item is active

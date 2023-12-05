@@ -3,7 +3,8 @@ import AutoplayCarousel from './Carousel';
 import Datos from './Datos';
 import Exito from './Exito';
 import Logros from './Logros/Logros';
-
+import Video from './Video';
+import Logo from   './logos'
 
 import ImgHome from './components/ImgHome';
 
@@ -29,9 +30,9 @@ export default function Home() {
                 <Datos/>
             </View>
 
-           
+            <Text style={styles.text}>Video</Text>
             <View>
-          
+            <Video/>
             </View>
 
             <Text style={styles.text}>Casos de Éxito</Text>
@@ -43,14 +44,15 @@ export default function Home() {
             <View>
             <Logros style={styles.carusel}/>
             </View>
-
-
-
-
-
-            <Text style={styles.text2}>Nuestros Socios de la Empresa Privada</Text>
+          
+            <Text style={styles.text1}>Nuestros Socios de la Empresa Privada</Text> 
             <View>
                 <ImgHome/>
+            </View>
+            
+            <Text style={styles.text1}>Siguenos</Text> 
+            <View>
+                <Logo/>
             </View>
 
        </ScrollView>
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginTop:8,
         color: '#808285',
+        padding: 10,
         textShadowColor: '#808285', // Color del borde
         textShadowOffset: { width: 1, height: 1 }
     },

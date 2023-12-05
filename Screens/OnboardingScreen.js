@@ -10,7 +10,7 @@ const slides = [
     key: 'one',
     title: 'Title 1',
     text: 'Description.\nSay something cool',
-    image: require('./../assets/images/img23.jpg'),
+    image: require('./../assets/tech3.jpg'),
     backgroundColor: '#59b2ab',
   },
   {

@@ -6,7 +6,7 @@ export default function Drawerview(props){
         <DrawerContentScrollView {...props} contentContainerStyle={styles.drawerHead}>
             <View style={styles.container}>
 
-                <Image source={require('../assets/eclipseDrawerItem.png')} style={styles.circleImage}/>
+                <Image source={require('../assets/logo.png')} style={styles.circleImage}/>
 
             </View>
 
@@ -19,12 +19,12 @@ export default function Drawerview(props){
 
 const styles = StyleSheet.create({
     circleImage:{
-        width: 150,
-        height: 150,
-        marginLeft: 50,
-        marginTop:25,
+        width: 200,
+        height: 180,
+        marginLeft: 32,
+        marginTop:20,
         marginBottom: 20,
-
+        resizeMode:'contain'
     },
 
     container: {
