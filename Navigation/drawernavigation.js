@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //Screens
-import Aliados from "../Screens/Aliados";
+import Aliados from "../Screens/Aliados/Aliados";
 import Home from '../Screens/Home/Home';
-import QuienesSomos from "../Screens/QuienesSomos";
-import Centros from "../Screens/Centros";
-import QueHacemos from "../Screens/QueHacemos";
-import Contacto from "../Screens/Contacto";
+import QuienesSomos from "../Screens/ScreenN/QuienesSomos";
+import Centros from "../Screens/Centros/Centros";
+import QueHacemos from "../Screens/ScreenN/QueHacemos";
+import Contacto from "../Screens/Contacto/Contacto";
 
 //importacion de drawerNavigation
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -15,11 +15,10 @@ const Drawer = createDrawerNavigator();
 import Drawerview from "./drawerview";
 import {Image, View} from "react-native";
 import drawerMenu from './drawerMenu';
-import NuestroEquipo from '../Screens/NuestroEquipo';
+import NuestroEquipo from '../Screens/Equipo/NuestroEquipo';
 import NuestraHistoria from '../Screens/Historia/NuestraHistoria';
 import NuestraFilosofia from '../Screens/Filosofia/NuestraFilosofia';
-import EfectoMultiplicador from '../Screens/EfectoMultiplicador';
-import NuestroPrograma from '../Screens/NuestroPrograma';
+import NuestroPrograma from '../Screens/Programa/NuestroPrograma';
   
 
 export default function DrawerNavigation(navigation) {
@@ -34,7 +33,7 @@ export default function DrawerNavigation(navigation) {
                               },
                               headerTitle: ({focused, color, size}) => (
                                   <View style={{flex:1, justifyContent:'flex-end', flexDirection:"row", alignItems:'center' , marginLeft:250}}>
-                                  <Image source={require('../assets/logo.png')} style={{width: 70, height: 35  , resizeMode:'contain'}}/>
+                                  <Image source={require('../assets/images/logo.png')} style={{width: 70, height: 35  , resizeMode:'contain'}}/>
                                   </View>
                               ),
                               //color to show when the item is active

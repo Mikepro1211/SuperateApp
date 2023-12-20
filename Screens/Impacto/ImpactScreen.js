@@ -19,8 +19,8 @@ const ImpactScreen = () => {
             renderItem={({item}) => <Text style={styles.textoList}>{item.key}</Text>}
         />
         <Text style={styles.titulo}>¿Qué Hacen Nuestros Graduados?</Text>
-        <Image style={styles.imagen1} source={require("../assets/imagen1_ImpactSS.png")} />
-        <Image style={styles.imagen2} source={require("../assets/imagen2_ImpactSS.png")} borderRadius={16} />
+        <Image style={styles.imagen1} source={require("../../assets/images/imagen1_ImpactSS.png")} />
+        <Image style={styles.imagen2} source={require("../../assets/images/imagen2_ImpactSS.png")} borderRadius={16} />
         </View>
     </ScrollView>
   );

@@ -1,9 +1,9 @@
 import {View, Text, StyleSheet} from "react-native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react'
-import NuestroPrograma from "../Screens/NuestroPrograma";
-import ImpactScreen from "../Screens/ImpactScreen";
-import EnfoqueCalidad from "../Screens/EnfoqueCalidad";
+import NuestroPrograma from "../Screens/Programa/NuestroPrograma";
+import ImpactScreen from "../Screens/Impacto/ImpactScreen";
+import EnfoqueCalidad from "../Screens/Calidad/EnfoqueCalidad";
 
 
 

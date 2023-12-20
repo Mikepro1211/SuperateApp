@@ -1,10 +1,10 @@
 import {createStackNavigator} from "@react-navigation/stack";
 import DrawerNavigation from "./drawernavigation";
-import OnboardingScreen from "../Screens/OnboardingScreen";
+import OnboardingScreen from "../Screens/Onboarding/OnboardingScreen.js";
 import { useEffect } from "react";
 import { getItem } from '../utils/asyncStorage.js';
-import InformacionCentro from "../Screens/InformacionCentro";
-import { InformacionAliados } from "../Screens/InformacionAliados";
+import InformacionCentro from "../Screens/Centros/InformacionCentro";
+import { InformacionAliados } from "../Screens/Aliados/InformacionAliados";
 
 //importaciones de screens llamadas por Stack
 

@@ -6,7 +6,7 @@ export default function Drawerview(props){
         <DrawerContentScrollView {...props} contentContainerStyle={styles.drawerHead}>
             <View style={styles.container}>
 
-                <Image source={require('../assets/logo.png')} style={styles.circleImage}/>
+                <Image source={require('../assets/images/logo.png')} style={styles.circleImage}/>
 
             </View>
 

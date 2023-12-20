@@ -6,7 +6,7 @@ const FocusScreen = () => {
         <ScrollView style={styles.contenedorScroll}>
             <View style={styles.container}>
                 <Text style={styles.titulo}>Enfoque en la calidad</Text>
-                <Image style={styles.imagen} source={require("../assets/enfoqueSS.png")} />
+                <Image style={styles.imagen} source={require("../../assets/images/enfoqueSS.png")} />
                 <Text style={styles.texto}>El Programa ¡Supérate! posee un enfoque en la calidad educativa, entendida como el resultado de la articulación y mejora constante de sus elementos principales como son el compromiso empresarial, docentes y directores competentes, manuales y programas curriculares adecuados, jóvenes con deseos de superación y la evidencia externa del aprendizaje (certificaciones y evaluaciones).</Text>
             </View>
         </ScrollView>

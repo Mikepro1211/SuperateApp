@@ -28,7 +28,7 @@ export default function NuestroPrograma() {
     <Text style={styles.paragraph}> Al finalizar el Programa, obtienen certificaciones internacionales que garantizan un dominio avanzado del idioma inglés y el manejo eficiente de las herramientas de Microsoft Office y programación.</Text>
     <Text style={styles.paragraph}>Los jóvenes también cuentan con una sólida base de valores y reflejan el compromiso de seguir contribuyendo al desarrollo socioeconómico del país.</Text>
     <Text style={styles.heading}>Áreas Curriculares</Text>
-    <Image style={styles.img} source={require("../assets/areas-curri.jpg")} />
+    <Image style={styles.img} source={require("../../assets/images/areas-curri.jpg")} />
     <Text style={styles.heading}>Requisitos de ingreso:</Text>
       <FlatList
             data={[
@@ -39,7 +39,7 @@ export default function NuestroPrograma() {
                 {key: '• Demostrar el deseo y potencial de superación.'},
             ]}
             renderItem={({item}) => <Text style={styles.textoList}>{item.key}</Text>}/>
-      <Image style={styles.img2} source={require("../assets/req-ingreso.jpg")} />
+      <Image style={styles.img2} source={require("../../assets/images/req-ingreso.jpg")} />
       </View>
       </ScrollView>
   )

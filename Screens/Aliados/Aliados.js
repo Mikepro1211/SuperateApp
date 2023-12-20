@@ -8,6 +8,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 export default function Aliados({ navigation }) {
   const [visible, setVisible] = useState(false);
   const [currentImages, setCurrentImages] = useState([]);
+  
   const aliados = [
     {
       id: 1,
