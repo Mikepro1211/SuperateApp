@@ -2,8 +2,7 @@ import {View, Text, StyleSheet, ScrollView} from "react-native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react'
 import NuestraHistoria from "../Screens/Historia/NuestraHistoria";
-import EfectoMultiplicador from "../Screens/EfectoMultiplicador";
-import NuestroEquipo from "../Screens/NuestroEquipo";
+import NuestroEquipo from "../Screens/Equipo/NuestroEquipo";
 import NuestraFilosofia from "../Screens/Filosofia/NuestraFilosofia";
 
 
@@ -49,16 +48,13 @@ import NuestraFilosofia from "../Screens/Filosofia/NuestraFilosofia";
           tabBarLabelStyle: {
             textTransform: "capitalize", 
             fontWeight:"bold",
-            width:75,
-            height:30,
-            padding:0,
+            alignItems:"center",
           }, 
           tabBarIndicatorStyle:{
             height: 7,
             borderRadius:5,
-            backgroundColor:"#00B6D8",
-          },
-          }}>
+            backgroundColor:"#00B6D8"
+          }}}>
           <Tab.Screen name="Historia" component={Screen1} />
           <Tab.Screen name=" Filosofia" component={Screen2} />
           <Tab.Screen name=" Equipo" component={Screen4} />

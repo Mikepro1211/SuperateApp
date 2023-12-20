@@ -1,9 +1,12 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState }  from 'react';
+import { View, Text, TouchableOpacity, StyleSheet,Modal,Image, Dimensions } from 'react-native';
 import LottieView from 'lottie-react-native';
 
+const width = Dimensions.get('window').width;
 
 export default function App() {
+  
+  const [modalVisible, setModalVisible] = useState(false);
   return (
   
       <View style={styles.buttonContainer}>
@@ -19,15 +22,40 @@ export default function App() {
        
        
         <View style={styles.verticalButtons}>
-          <TouchableOpacity style={[styles.button2]}>
-            <Text style={styles.buttonText}>Liderazgo</Text>
+          <TouchableOpacity style={[styles.button2]} onTouchEnd={() => setModalVisible(true)}>
+            <Text style={styles.buttonText}>Unetenos</Text>
+        
           </TouchableOpacity>
           <TouchableOpacity  style={[styles.button3]}>
             <Text style={styles.buttonText}>Excelencia</Text>
           </TouchableOpacity>
         </View>
+
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(false);
+        }}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+
+            
+            <Text style={styles.buttonText}>Unetenos</Text>
+            <TouchableOpacity
+              style={styles.closeButton}
+              onPress={() => setModalVisible(false)}
+            >
+              <Text style={{ textAlign: 'center', fontSize: 15 }}>Cerrar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
       </View>
-   
+
   );
 }
 
@@ -90,6 +118,27 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: '15%',
   
+  },
+  
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    width: width * 0.9,
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  closeButton: {
+    backgroundColor: '#BCBEC0',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 20,
+    width: '30%',
   },
 
 

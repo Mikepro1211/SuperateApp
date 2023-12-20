@@ -8,13 +8,14 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 export default function Aliados({ navigation }) {
   const [visible, setVisible] = useState(false);
   const [currentImages, setCurrentImages] = useState([]);
+  
   const aliados = [
     {
       id: 1,
       nombre: "Embajada De Los Estados Unidos",
       descripcion:
         "La Embajada de Estados Unidos en El Salvador se ha convertido en aliado del Programa, gestionando oportunidades que fortalecen el posicionamiento del Programa y que, en definitiva, representan otras posibilidades de éxito para todos los miembros de la familia ¡Supérate!; entre algunos de sus programas se encuentran: English Access Microscholarship Program y Youth Ambassadors.",
-      logo: "https://superate.org.sv/wp-content/uploads/2018/11/embajada.png",
+      logo: "https://impacto2030.com/wp-content/uploads/2019/08/embajada-USA-SV-flag-300x288.jpg",
       imagenes: [
         "https://superate.org.sv/wp-content/uploads/2018/12/a.jpg",
         "https://superate.org.sv/wp-content/uploads/2018/12/b.jpg",
@@ -30,7 +31,7 @@ export default function Aliados({ navigation }) {
       nombre: "USAID",
       descripcion:
         "La Agencia de los Estados Unidos para el Desarrollo Internacional (USAID) firmó una alianza público privada con la Fundación Sagrera Palomo y Microsoft El Salvador en 2010 para el fortalecimiento y la expansión de nuevos Centros ¡Supérate! en El Salvador. Además, USAID ha financiado Becas Semilla para que algunos de los graduados cursen estudios técnicos en Estados Unidos.",
-      logo: "https://superate.org.sv/wp-content/uploads/2018/11/usaid.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/USAID-Identity.svg/2560px-USAID-Identity.svg.png",
       imagenes: [
         "https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0000_Lineas.jpg",
         "https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0001_Lineas.jpg",
@@ -47,7 +48,7 @@ export default function Aliados({ navigation }) {
       nombre: "Microsoft",
       descripcion:
         "Microsoft El Salvador ha donado todas las licencias de software, sistema operativo y de productividad desde el inicio del Programa en el 2004. También apoyan con capacitaciones para docentes, computadoras para los graduados con mejores desempeños académicos y con becas DIGIGIRLZ.",
-      logo: "https://superate.org.sv/wp-content/uploads/2018/11/ms.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1024px-Microsoft_logo_%282012%29.svg.png",
       imagenes: [
         "https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0000_Lineas.jpg",
         "https://superate.org.sv/wp-content/uploads/2022/07/hilasal_0010s_0001_Lineas.jpg",
@@ -110,10 +111,15 @@ export default function Aliados({ navigation }) {
           <TouchableOpacity
             onPress={() => {
               setVisible(true);
-              setCurrentImages(item.imagenes.map((image) => ({ url: image })));
+              if (item.imagenes) {
+                setCurrentImages(item.imagenes.map((image) => ({ url: image })));
+              } else {
+                setCurrentImages([]);
+              }
             }}
+            
           >
-            <Text>Ver más</Text>
+            
           </TouchableOpacity>
 
          
@@ -122,7 +128,9 @@ export default function Aliados({ navigation }) {
             <ImageViewer style={styles.containerModal}
               imageUrls={currentImages}
             />
-           
+             <TouchableOpacity style={ {backgroundColor: '#BCBEC0',color: 'white', borderRadius: 10,padding: 10,marginTop: -40, width: '30%'}}  onPress={() => setModalVisible(false)}  >
+            <Text style={{ textAlign: 'center',fontSize: 15,}}>Cerrar</Text>
+          </TouchableOpacity>
             
           </Modal>
           
@@ -175,6 +183,7 @@ const styles = StyleSheet.create({
   imagen: {
     width: "100%",
     height: 140,
+    resizeMode:'contain'
   },
   text: {
     fontSize: 15,
